@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Müqayisə Platforması</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Muqayise.az</div>
+      <ul class="nav-links mobile-hidden">
+        <li><a href="#">Ana Səhifə</a></li>
+        <li><a href="#">Kateqoriyalar</a></li>
+        <li><a href="#">Haqqımızda</a></li>
+        <li><a href="#">Əlaqə</a></li>
+      </ul>
+      <button id="burger-menu" class="burger-menu" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <section class="hero">
+      <h1>Xidmətləri Müqayisə Et və Ən Yaxşı Seçimi Tap!</h1>
+      <div class="search-bar-wrapper">
+        <input type="text" placeholder="Xidmət axtar..." />
+        <div class="search-suggestions"></div>
+      </div>
+      <div class="filters-bar">
+        <button class="filter-btn" data-filter="Hamısı">Hamısı</button>
+        <button class="filter-btn" data-filter="Restoranlar">
+          Restoranlar
+        </button>
+        <button class="filter-btn" data-filter="Mağazalar">Mağazalar</button>
+        <button class="filter-btn" data-filter="Sığorta">Sığorta</button>
+        <button class="filter-btn" data-filter="Qiymət">Qiymət</button>
+        <button class="filter-btn" data-filter="Reytinq">Reytinq</button>
+        <button class="filter-btn" data-filter="Şəhər">Şəhər</button>
+      </div>
+      <button class="find-nearby-btn">Yaxındakı Xidmətləri Tap 📍</button>
+    </section>
+
+    <section class="categories">
+      <div class="category-card" data-category="Restoranlar">
+        Restoranlar 🍔
+      </div>
+      <div class="category-card" data-category="Mağazalar">Mağazalar 🛍</div>
+      <div class="category-card" data-category="Sığorta">Sığorta 🏦</div>
+      <div class="category-card" data-category="Elektronika">
+        Elektronika 💻
+      </div>
+      <div class="category-card" data-category="Endirimli mağazalar">
+        Endirimli mağazalar 🏷️
+      </div>
+    </section>
+
+    <section class="sponsors">
+      <h2>Bizə Güvənən Şirkətlər</h2>
+      <div class="sponsor-marquee">
+        <div class="marquee-content">
+          <img src="./img/araz.png" alt="Sponsor 1" />
+          <img src="./img/bolmart.png" alt="Sponsor 2" />
+          <img src="./img/bravo.jpg" alt="Sponsor 3" />
+          <img src="./img/grand.png" alt="Sponsor 4" />
+          <img src="./img/mega.png" alt="Sponsor 5" />
+          <img src="./img/araz.png" alt="Sponsor 1" />
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>İstifadəçi Rəyləri</h2>
+      <div class="testimonial-list">
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="User 1"
+          />
+          <div class="testimonial-info">
+            <h4>Elvin Məmmədov</h4>
+            <p>Platformadan çox razı qaldım, seçimlər geniş və rahatdır!</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="User 2"
+          />
+          <div class="testimonial-info">
+            <h4>Aysel Əliyeva</h4>
+            <p>Qiymətləri müqayisə etmək indi çox asandır. Təşəkkürlər!</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/65.jpg"
+            alt="User 3"
+          />
+          <div class="testimonial-info">
+            <h4>Rəşad Quliyev</h4>
+            <p>Çox sürətli və istifadəsi rahat bir platformadır.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-blocks">
+      <button class="cta-btn join">İndi qoşul</button>
+      <button class="cta-btn add-company">Şirkətini əlavə et</button>
+      <button class="cta-btn sponsor">Sponsor ol</button>
+    </section>
+
+    <section class="newsletter">
+      <h2>Yeniliklərə abunə ol</h2>
+      <form id="newsletter-form">
+        <input
+          type="email"
+          placeholder="E-poçt adresinizi daxil edin"
+          required
+        />
+        <button type="submit">Abunə ol</button>
+      </form>
+    </section>
+
+    <div class="toast" id="toast">
+      Yeni kampaniya: Bütün xidmətlərdə 20% endirim!
+    </div>
+
+    <section class="compare-list-section">
+      <h3>Müqayisə Siyahısı</h3>
+      <ul id="compare-list"></ul>
+    </section>
+
+    <section class="history-section">
+      <h3>Son Baxdıqların</h3>
+      <ul id="history-list"></ul>
+    </section>
+
+    <section class="recommendations-section">
+      <h3>Sizə Xüsusi Təkliflər</h3>
+      <div id="recommendation-box">
+        Sığorta üçün xüsusi kampaniya: 20% endirim!
+      </div>
+    </section>
+
+    <section class="review-section">
+      <h3>Rəy və Reytinq</h3>
+      <form id="review-form">
+        <select id="review-service">
+          <option>Restoranlar</option>
+          <option>Mağazalar</option>
+          <option>Sığorta</option>
+          <option>Elektronika</option>
+        </select>
+        <input
+          type="number"
+          id="review-rating"
+          min="1"
+          max="5"
+          placeholder="Reytinq (1-5)"
+        />
+        <input type="text" id="review-comment" placeholder="Şərhiniz" />
+        <button type="submit">Rəy əlavə et</button>
+      </form>
+      <ul id="review-list"></ul>
+    </section>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Qeydiyyat / Giriş</h3>
+        <input type="text" placeholder="Adınız" />
+        <input type="email" placeholder="E-poçt" />
+        <input type="password" placeholder="Şifrə" />
+        <button id="login-btn">Daxil ol</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Muqayise.az | Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
