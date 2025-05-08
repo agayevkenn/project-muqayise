@@ -173,3 +173,37 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js").catch(() => {});
   });
 }
+
+const burgerMenu = document.getElementById("burger-menu");
+const navLinks = document.querySelector(".nav-links");
+
+if (burgerMenu && navLinks) {
+  burgerMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.contains("mobile-visible");
+    if (isOpen) {
+      navLinks.classList.remove("mobile-visible");
+      navLinks.classList.add("mobile-hidden");
+    } else {
+      navLinks.classList.add("mobile-visible");
+      navLinks.classList.remove("mobile-hidden");
+    }
+  });
+  navLinks.addEventListener("click", (e) => {
+    if (window.innerWidth <= 680 && e.target.tagName === "A") {
+      navLinks.classList.remove("mobile-visible");
+      navLinks.classList.add("mobile-hidden");
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (
+      window.innerWidth <= 680 &&
+      navLinks.classList.contains("mobile-visible") &&
+      !navLinks.contains(e.target) &&
+      e.target !== burgerMenu
+    ) {
+      navLinks.classList.remove("mobile-visible");
+      navLinks.classList.add("mobile-hidden");
+    }
+  });
+}
