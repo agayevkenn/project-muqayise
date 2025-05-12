@@ -25,10 +25,14 @@ body {
 }
 
 .logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: var(--accent);
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .burger-menu {
@@ -100,9 +104,8 @@ body {
     align-items: center;
     padding: 10px 4vw;
   }
-  .logo {
-    font-size: 1.2rem;
-    margin-bottom: 0;
+  .logo img {
+    height: 50px;
   }
   .burger-menu {
     display: flex;
